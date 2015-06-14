@@ -29,7 +29,7 @@ public class WeatherData {
     private String icon;
     private String sunriseTime;
     private String sunsetTime;
-    private String moonPhase;
+    private Double moonPhase;
     private Double nearestStormDistance;
     private Double nearestStormBearing;
     private Double precipIntensity;
@@ -101,7 +101,7 @@ public class WeatherData {
      * in between these represent waxing crescent, waxing gibbous, waning gibbous, and waning
      * crescent moons, respectively.)
      */
-    public String getMoonPhase() {
+    public Double getMoonPhase() {
         return moonPhase;
     }
 
@@ -384,7 +384,7 @@ public class WeatherData {
         private String icon;
         private String sunriseTime;
         private String sunsetTime;
-        private String moonPhase;
+        private Double moonPhase;
         private Double nearestStormDistance;
         private Double nearestStormBearing;
         private Double precipIntensity;
@@ -440,7 +440,7 @@ public class WeatherData {
             return this;
         }
 
-        public Builder withMoonPhase(String moonPhase) {
+        public Builder withMoonPhase(Double moonPhase) {
             this.moonPhase = moonPhase;
             return this;
         }
