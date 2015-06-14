@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="forecastio">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../forecastio-lib-java/src" />
+    </SOURCES>
+  </library>
+</component>
