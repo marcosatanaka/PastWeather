@@ -1,4 +1,4 @@
-package br.com.marcosatanaka.pastweather.entity;
+package br.com.marcosatanaka.pastweather.model;
 
 /**
  * Constants used throughout the app.

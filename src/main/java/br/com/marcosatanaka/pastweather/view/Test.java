@@ -1,7 +1,7 @@
-package br.com.marcosatanaka.pastweather.controller;
+package br.com.marcosatanaka.pastweather.view;
 
-import br.com.marcosatanaka.pastweather.entity.Constants;
-import br.com.marcosatanaka.pastweather.entity.WeatherData;
+import br.com.marcosatanaka.pastweather.model.Constants;
+import br.com.marcosatanaka.pastweather.model.WeatherData;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.ForecastIO;

@@ -1,6 +1,6 @@
-package br.com.marcosatanaka.pastweather.entity;
+package br.com.marcosatanaka.pastweather.model;
 
-import static br.com.marcosatanaka.pastweather.entity.Constants.LINE_BREAK;
+import static br.com.marcosatanaka.pastweather.model.Constants.LINE_BREAK;
 
 /**
  * Represents a data point gathered from the Forecast.io API.
