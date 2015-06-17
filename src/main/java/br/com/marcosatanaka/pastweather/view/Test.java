@@ -11,7 +11,7 @@ import com.github.dvdme.ForecastIOLib.ForecastIO;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static WeatherData getWeatherData() {
         ForecastIO fio = new ForecastIO(Constants.API_KEY);
         fio.setLang(Constants.LANG);
         fio.setUnits(Constants.UNITS);
@@ -25,7 +25,7 @@ public class Test {
         } else {
             FIODataPoint day = daily.getDay(0);
 
-            WeatherData weatherData = WeatherData.builder()
+            return WeatherData.builder()
                     .withTime(day.time())
                     .withSummary(day.summary())
                     .withIcon(day.icon())
@@ -45,11 +45,11 @@ public class Test {
                     .withTemperatureMinTime(day.temperatureMinTime())
                     .withTemperatureMax(day.temperatureMax())
                     .withTemperatureMaxTime(day.temperatureMaxTime())
-                    .withAparentTemperature(day.apparentTemperature())
-                    .withAparentTemperatureMin(day.apparentTemperatureMin())
-                    .withAparentTemperatureMinTime(day.temperatureMinTime())
-                    .withAparentTemperatureMax(day.temperatureMax())
-                    .withAparentTemperatureMaxTime(day.temperatureMaxTime())
+                    .withApparentTemperature(day.apparentTemperature())
+                    .withApparentTemperatureMin(day.apparentTemperatureMin())
+                    .withApparentTemperatureMinTime(day.temperatureMinTime())
+                    .withApparentTemperatureMax(day.temperatureMax())
+                    .withApparentTemperatureMaxTime(day.temperatureMaxTime())
                     .withDewPoint(day.dewPoint())
                     .withWindSpeed(day.windSpeed())
                     .withWindBearing(day.windBearing())
@@ -59,9 +59,8 @@ public class Test {
                     .withVisibility(day.visibility())
                     .withOzone(day.ozone())
                     .build();
-
-            System.out.println(weatherData);
         }
+        return null;
     }
 
 }

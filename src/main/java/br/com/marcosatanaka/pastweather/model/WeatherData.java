@@ -35,7 +35,7 @@ public class WeatherData {
     private Double precipIntensity;
     private Double precipIntensityMax;
     private String precipIntensityMaxTime;
-    private Double percipProbability;
+    private Double precipProbability;
     private String precipType;
     private Double precipAccumulation;
     private Double temperature;
@@ -43,10 +43,10 @@ public class WeatherData {
     private String temperatureMinTime;
     private Double temperatureMax;
     private String temperatureMaxTime;
-    private Double aparentTemperature;
-    private Double aparentTemperatureMin;
-    private String aparentTemperatureMinTime;
-    private Double aparentTemperatureMax;
+    private Double apparentTemperature;
+    private Double apparentTemperatureMin;
+    private String apparentTemperatureMinTime;
+    private Double apparentTemperatureMax;
     private String aparentTemperatureMaxTime;
     private Double dewPoint;
     private Double windSpeed;
@@ -150,8 +150,12 @@ public class WeatherData {
      * @return A numerical value between 0 and 1 (inclusive) representing the probability of precipitation
      * occuring at the given time.
      */
-    public Double getPercipProbability() {
-        return percipProbability;
+    public Double getPrecipProbability() {
+        return precipProbability;
+    }
+
+    public String getFormattedPrecipProbability() {
+        return String.valueOf(getPrecipProbability() * 100) + "%";
     }
 
     /**
@@ -209,33 +213,33 @@ public class WeatherData {
     /**
      * @return A numerical value representing the apparent (or “feels like”) temperature at the given time.
      */
-    public Double getAparentTemperature() {
-        return aparentTemperature;
+    public Double getApparentTemperature() {
+        return apparentTemperature;
     }
 
     /**
      * @return A numerical value representing the minimum apparent temperature on the given day.
      */
-    public Double getAparentTemperatureMin() {
-        return aparentTemperatureMin;
+    public Double getApparentTemperatureMin() {
+        return apparentTemperatureMin;
     }
 
     /**
-     * @return Time at which aparentTemperatureMin occurs.
+     * @return Time at which apparentTemperatureMin occurs.
      */
-    public String getAparentTemperatureMinTime() {
-        return aparentTemperatureMinTime;
+    public String getApparentTemperatureMinTime() {
+        return apparentTemperatureMinTime;
     }
 
     /**
      * @return A numerical value representing the maximum apparent temperature on the given day.
      */
-    public Double getAparentTemperatureMax() {
-        return aparentTemperatureMax;
+    public Double getApparentTemperatureMax() {
+        return apparentTemperatureMax;
     }
 
     /**
-     * @return Time at which aparentTemperatureMax occurs.
+     * @return Time at which apparentTemperatureMax occurs.
      */
     public String getAparentTemperatureMaxTime() {
         return aparentTemperatureMaxTime;
@@ -315,7 +319,7 @@ public class WeatherData {
                 "precipIntensity = " + precipIntensity + LINE_BREAK +
                 "precipIntensityMax = " + precipIntensityMax + LINE_BREAK +
                 "precipIntensityMaxTime = " + precipIntensityMaxTime + '\'' + LINE_BREAK +
-                "percipProbability = " + percipProbability + LINE_BREAK +
+                "precipProbability = " + precipProbability + LINE_BREAK +
                 "precipType = " + precipType + LINE_BREAK +
                 "precipAccumulation = " + precipAccumulation + LINE_BREAK +
                 "temperature = " + temperature + LINE_BREAK +
@@ -323,11 +327,11 @@ public class WeatherData {
                 "temperatureMinTime = '" + temperatureMinTime + LINE_BREAK +
                 "temperatureMax = " + temperatureMax + LINE_BREAK +
                 "temperatureMaxTime = '" + temperatureMaxTime + LINE_BREAK +
-                "aparentTemperature = " + aparentTemperature + LINE_BREAK +
-                "aparentTemperatureMin = " + aparentTemperatureMin + LINE_BREAK +
-                "aparentTemperatureMinTime = " + aparentTemperatureMinTime + LINE_BREAK +
-                "aparentTemperatureMax = " + aparentTemperatureMax + LINE_BREAK +
-                "aparentTemperatureMaxTime = " + aparentTemperatureMaxTime + LINE_BREAK +
+                "apparentTemperature = " + apparentTemperature + LINE_BREAK +
+                "apparentTemperatureMin = " + apparentTemperatureMin + LINE_BREAK +
+                "apparentTemperatureMinTime = " + apparentTemperatureMinTime + LINE_BREAK +
+                "apparentTemperatureMax = " + apparentTemperatureMax + LINE_BREAK +
+                "apparentTemperatureMaxTime = " + aparentTemperatureMaxTime + LINE_BREAK +
                 "dewPoint = " + dewPoint + LINE_BREAK +
                 "windSpeed = " + windSpeed + LINE_BREAK +
                 "windBearing = " + windBearing + LINE_BREAK +
@@ -351,7 +355,7 @@ public class WeatherData {
         precipIntensity = builder.precipIntensity;
         precipIntensityMax = builder.precipIntensityMax;
         precipIntensityMaxTime = builder.precipIntensityMaxTime;
-        percipProbability = builder.percipProbability;
+        precipProbability = builder.percipProbability;
         precipType = builder.precipType;
         precipAccumulation = builder.precipAccumulation;
         temperature = builder.temperature;
@@ -359,11 +363,11 @@ public class WeatherData {
         temperatureMinTime = builder.temperatureMinTime;
         temperatureMax = builder.temperatureMax;
         temperatureMaxTime = builder.temperatureMaxTime;
-        aparentTemperature = builder.aparentTemperature;
-        aparentTemperatureMin = builder.aparentTemperatureMin;
-        aparentTemperatureMinTime = builder.aparentTemperatureMinTime;
-        aparentTemperatureMax = builder.aparentTemperatureMax;
-        aparentTemperatureMaxTime = builder.aparentTemperatureMaxTime;
+        apparentTemperature = builder.apparentTemperature;
+        apparentTemperatureMin = builder.apparentTemperatureMin;
+        apparentTemperatureMinTime = builder.apparentTemperatureMinTime;
+        apparentTemperatureMax = builder.apparentTemperatureMax;
+        aparentTemperatureMaxTime = builder.apparentTemperatureMaxTime;
         dewPoint = builder.dewPoint;
         windSpeed = builder.windSpeed;
         windBearing = builder.windBearing;
@@ -398,11 +402,11 @@ public class WeatherData {
         private String temperatureMinTime;
         private Double temperatureMax;
         private String temperatureMaxTime;
-        private Double aparentTemperature;
-        private Double aparentTemperatureMin;
-        private String aparentTemperatureMinTime;
-        private Double aparentTemperatureMax;
-        private String aparentTemperatureMaxTime;
+        private Double apparentTemperature;
+        private Double apparentTemperatureMin;
+        private String apparentTemperatureMinTime;
+        private Double apparentTemperatureMax;
+        private String apparentTemperatureMaxTime;
         private Double dewPoint;
         private Double windSpeed;
         private Double windBearing;
@@ -510,28 +514,28 @@ public class WeatherData {
             return this;
         }
 
-        public Builder withAparentTemperature(Double aparentTemperature) {
-            this.aparentTemperature = aparentTemperature;
+        public Builder withApparentTemperature(Double apparentTemperature) {
+            this.apparentTemperature = apparentTemperature;
             return this;
         }
 
-        public Builder withAparentTemperatureMin(Double aparentTemperatureMin) {
-            this.aparentTemperatureMin = aparentTemperatureMin;
+        public Builder withApparentTemperatureMin(Double apparentTemperatureMin) {
+            this.apparentTemperatureMin = apparentTemperatureMin;
             return this;
         }
 
-        public Builder withAparentTemperatureMinTime(String aparentTemperatureMinTime) {
-            this.aparentTemperatureMinTime = aparentTemperatureMinTime;
+        public Builder withApparentTemperatureMinTime(String apparentTemperatureMinTime) {
+            this.apparentTemperatureMinTime = apparentTemperatureMinTime;
             return this;
         }
 
-        public Builder withAparentTemperatureMax(Double aparentTemperatureMax) {
-            this.aparentTemperatureMax = aparentTemperatureMax;
+        public Builder withApparentTemperatureMax(Double apparentTemperatureMax) {
+            this.apparentTemperatureMax = apparentTemperatureMax;
             return this;
         }
 
-        public Builder withAparentTemperatureMaxTime(String aparentTemperatureMaxTime) {
-            this.aparentTemperatureMaxTime = aparentTemperatureMaxTime;
+        public Builder withApparentTemperatureMaxTime(String apparentTemperatureMaxTime) {
+            this.apparentTemperatureMaxTime = apparentTemperatureMaxTime;
             return this;
         }
 
