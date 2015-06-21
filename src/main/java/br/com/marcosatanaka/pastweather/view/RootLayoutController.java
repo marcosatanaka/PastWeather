@@ -17,18 +17,23 @@ public class RootLayoutController {
     private Label lblPrecipitationProbability;
 
     @FXML
-    private Label lblMainInformation;
+    private Label lblMaxTemp;
 
     @FXML
-    private Label lblSecondaryInformation;
+    private Label lblMinTemp;
+
+    @FXML
+    private Label lblMainInformation;
 
     @FXML
     private void initialize() {
         WeatherData weatherData = Test.getWeatherData();
+        System.out.println(weatherData);
         if (weatherData != null) {
             lblPrecipitationProbability.setText(weatherData.getFormattedPrecipProbability());
             lblMainInformation.setText(weatherData.getSummary());
-            lblSecondaryInformation.setText("Apparent maximum temperature: " + weatherData.getApparentTemperatureMax().toString());
+            lblMaxTemp.setText(weatherData.getTemperatureMax().toString());
+            lblMinTemp.setText(weatherData.getTemperatureMin().toString());
         }
     }
 

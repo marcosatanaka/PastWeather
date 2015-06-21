@@ -155,7 +155,7 @@ public class WeatherData {
     }
 
     public String getFormattedPrecipProbability() {
-        return String.valueOf(getPrecipProbability() * 100) + "%";
+        return String.valueOf(getPrecipProbability() * 100) + " %";
     }
 
     /**
