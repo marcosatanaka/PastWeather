@@ -5,19 +5,23 @@ import br.com.marcosatanaka.pastweather.model.WeatherData;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
+import org.geonames.Toponym;
+import org.geonames.ToponymSearchCriteria;
+import org.geonames.ToponymSearchResult;
+import org.geonames.WebService;
 
 /**
- * Test class for a API call.
+ * Test class for an API call.
  */
 public class Test {
 
     public static WeatherData getWeatherData() {
-        ForecastIO fio = new ForecastIO(Constants.API_KEY);
+        ForecastIO fio = new ForecastIO(Constants.FORECAST_IO_API_KEY);
         fio.setLang(Constants.LANG);
         fio.setUnits(Constants.UNITS);
         fio.setExcludeURL("hourly,minutely");
         //fio.setTime("2013-05-31T12:18:06");
-        fio.getForecast("40.738180", "-73.989981");
+        fio.getForecast("-23.398934", "-51.920031");
 
         FIODaily daily = new FIODaily(fio);
         if (daily.days() < 0) {
@@ -61,6 +65,19 @@ public class Test {
                     .build();
         }
         return null;
+    }
+
+    public static void getLatitudeAndLongitudeForLocation() throws Exception {
+        WebService.setUserName(Constants.GEONAMES_APP_NAME);
+
+        ToponymSearchCriteria searchCriteria = new ToponymSearchCriteria();
+        searchCriteria.setQ("maringá");
+
+        ToponymSearchResult searchResult = WebService.search(searchCriteria);
+        searchResult.getToponyms()
+                .stream()
+                .findFirst()
+                .ifPresent(toponym -> System.out.println(toponym.getName() + " " + toponym.getCountryName() + " Latitude: " + toponym.getLatitude() + " Longitude: " + toponym.getLongitude()));
     }
 
 }

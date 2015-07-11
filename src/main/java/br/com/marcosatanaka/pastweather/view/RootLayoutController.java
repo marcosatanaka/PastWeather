@@ -26,15 +26,18 @@ public class RootLayoutController {
     private Label lblMainInformation;
 
     @FXML
-    private void initialize() {
+    private void initialize() throws Exception {
         WeatherData weatherData = Test.getWeatherData();
         System.out.println(weatherData);
+
         if (weatherData != null) {
             lblPrecipitationProbability.setText(weatherData.getFormattedPrecipProbability());
             lblMainInformation.setText(weatherData.getSummary());
             lblMaxTemp.setText(weatherData.getTemperatureMax().toString());
             lblMinTemp.setText(weatherData.getTemperatureMin().toString());
         }
+
+        Test.getLatitudeAndLongitudeForLocation();
     }
 
     public void setPastWeatherApp(PastWeatherApp pastWeatherApp) {
