@@ -15,13 +15,13 @@ import org.geonames.WebService;
  */
 public class Test {
 
-    public static WeatherData getWeatherData() {
+    public static WeatherData getWeatherData(String latitude, String longitude, String date) {
         ForecastIO fio = new ForecastIO(Constants.FORECAST_IO_API_KEY);
         fio.setLang(Constants.LANG);
         fio.setUnits(Constants.UNITS);
         fio.setExcludeURL("hourly,minutely");
-        //fio.setTime("2013-05-31T12:18:06");
-        fio.getForecast("-23.398934", "-51.920031");
+        fio.setTime(date + "T12:00:00");
+        fio.getForecast(latitude, longitude);
 
         FIODaily daily = new FIODaily(fio);
         if (daily.days() < 0) {
@@ -67,17 +67,31 @@ public class Test {
         return null;
     }
 
-    public static void getLatitudeAndLongitudeForLocation() throws Exception {
+    public static String getLatitudeForLocation(String city) throws Exception {
+        Toponym toponym = getToponym(city);
+        return toString(toponym.getLatitude());
+    }
+
+    public static String getLongitudeForLocation(String city) throws Exception {
+        Toponym toponym = getToponym(city);
+        return toString(toponym.getLongitude());
+    }
+
+    private static Toponym getToponym(String city) throws Exception {
         WebService.setUserName(Constants.GEONAMES_APP_NAME);
 
         ToponymSearchCriteria searchCriteria = new ToponymSearchCriteria();
-        searchCriteria.setQ("maringá");
+        searchCriteria.setQ(city);
 
         ToponymSearchResult searchResult = WebService.search(searchCriteria);
-        searchResult.getToponyms()
+        return searchResult.getToponyms()
                 .stream()
                 .findFirst()
-                .ifPresent(toponym -> System.out.println(toponym.getName() + " " + toponym.getCountryName() + " Latitude: " + toponym.getLatitude() + " Longitude: " + toponym.getLongitude()));
+                .orElseThrow(() -> new Exception("City not found!"));
+    }
+
+    private static String toString(double d) {
+        return String.valueOf(d);
     }
 
 }

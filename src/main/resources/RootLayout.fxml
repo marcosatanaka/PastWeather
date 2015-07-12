@@ -115,16 +115,30 @@
                </children>
             </GridPane>
             <Separator prefHeight="14.0" prefWidth="400.0" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <VBox prefHeight="170.0" prefWidth="100.0">
                <children>
-                  <Label text="Select date:">
-                     <padding>
-                        <Insets right="10.0" />
-                     </padding>
-                  </Label>
-                  <DatePicker />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label minWidth="81.0" text="Select city:">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="city" onAction="#search" prefHeight="26.0" prefWidth="190.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label minWidth="81.0" text="Select date:">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <DatePicker fx:id="date" onAction="#search" />
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
+            </VBox>
          </children>
       </VBox>
    </center>

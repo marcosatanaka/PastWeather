@@ -11,10 +11,11 @@ For being able to use it, you will have to register at Forecast.io and GeoNames 
 ## Done:
 - Consume data from Forecast.io API.
 - Create user interface using JavaFX.
+- Implement the user interface logic.
  
 ## To Do:
 - Enhance the user interface adding more weather information.
-- Implement the user interface logic.
+- Implement autocomplete for city field.
  
 ## External Libraries:
 PastWeather uses [ForecastIO-Lib-Java](https://github.com/dvdme/forecastio-lib-java) to communicate with the Forecast.io API. This is a dependency on pom.xml.
