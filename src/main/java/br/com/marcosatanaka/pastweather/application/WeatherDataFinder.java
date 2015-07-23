@@ -1,4 +1,4 @@
-package br.com.marcosatanaka.pastweather.view;
+package br.com.marcosatanaka.pastweather.application;
 
 import br.com.marcosatanaka.pastweather.model.Constants;
 import br.com.marcosatanaka.pastweather.model.WeatherData;
@@ -11,9 +11,9 @@ import org.geonames.ToponymSearchResult;
 import org.geonames.WebService;
 
 /**
- * Test class for an API call.
+ * Calls Forecast.io API to get weather data.
  */
-public class Test {
+public class WeatherDataFinder {
 
     public static WeatherData getWeatherData(String latitude, String longitude, String date) {
         ForecastIO fio = new ForecastIO(Constants.FORECAST_IO_API_KEY);
@@ -66,32 +66,4 @@ public class Test {
         }
         return null;
     }
-
-    public static String getLatitudeForLocation(String city) throws Exception {
-        Toponym toponym = getToponym(city);
-        return toString(toponym.getLatitude());
-    }
-
-    public static String getLongitudeForLocation(String city) throws Exception {
-        Toponym toponym = getToponym(city);
-        return toString(toponym.getLongitude());
-    }
-
-    private static Toponym getToponym(String city) throws Exception {
-        WebService.setUserName(Constants.GEONAMES_APP_NAME);
-
-        ToponymSearchCriteria searchCriteria = new ToponymSearchCriteria();
-        searchCriteria.setQ(city);
-
-        ToponymSearchResult searchResult = WebService.search(searchCriteria);
-        return searchResult.getToponyms()
-                .stream()
-                .findFirst()
-                .orElseThrow(() -> new Exception("City not found!"));
-    }
-
-    private static String toString(double d) {
-        return String.valueOf(d);
-    }
-
 }

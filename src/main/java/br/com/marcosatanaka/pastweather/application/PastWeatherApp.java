@@ -1,4 +1,4 @@
-package br.com.marcosatanaka.pastweather;
+package br.com.marcosatanaka.pastweather.application;
 
 import br.com.marcosatanaka.pastweather.view.RootLayoutController;
 import javafx.application.Application;

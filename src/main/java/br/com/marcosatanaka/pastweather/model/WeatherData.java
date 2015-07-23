@@ -276,11 +276,19 @@ public class WeatherData {
         return cloudCover;
     }
 
+    public String getFormattedCloudCover() {
+        return String.valueOf(getCloudCover() * 100) + " %";
+    }
+
     /**
      * @return A numerical value between 0 and 1 (inclusive) representing the relative humidity.
      */
     public Double getHumidity() {
         return humidity;
+    }
+
+    public String getFormattedHumidity() {
+        return String.valueOf(getHumidity() * 100) + " %";
     }
 
     /**
