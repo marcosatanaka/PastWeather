@@ -1,8 +1,7 @@
-package br.com.marcosatanaka.pastweather.view;
+package br.com.marcosatanaka.pastweather.controller;
 
-import br.com.marcosatanaka.pastweather.application.GeographicCoordinateFinder;
-import br.com.marcosatanaka.pastweather.application.PastWeatherApp;
-import br.com.marcosatanaka.pastweather.application.WeatherDataFinder;
+import br.com.marcosatanaka.pastweather.model.GeographicCoordinateFinder;
+import br.com.marcosatanaka.pastweather.model.WeatherDataFinder;
 import br.com.marcosatanaka.pastweather.model.WeatherData;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;

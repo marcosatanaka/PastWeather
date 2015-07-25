@@ -1,14 +1,8 @@
-package br.com.marcosatanaka.pastweather.application;
+package br.com.marcosatanaka.pastweather.model;
 
-import br.com.marcosatanaka.pastweather.model.Constants;
-import br.com.marcosatanaka.pastweather.model.WeatherData;
 import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
-import org.geonames.Toponym;
-import org.geonames.ToponymSearchCriteria;
-import org.geonames.ToponymSearchResult;
-import org.geonames.WebService;
 
 /**
  * Calls Forecast.io API to get weather data.

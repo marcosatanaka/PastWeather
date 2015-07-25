@@ -1,6 +1,5 @@
-package br.com.marcosatanaka.pastweather.application;
+package br.com.marcosatanaka.pastweather.controller;
 
-import br.com.marcosatanaka.pastweather.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

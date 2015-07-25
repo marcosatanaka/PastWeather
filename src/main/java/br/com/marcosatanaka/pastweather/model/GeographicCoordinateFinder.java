@@ -1,6 +1,5 @@
-package br.com.marcosatanaka.pastweather.application;
+package br.com.marcosatanaka.pastweather.model;
 
-import br.com.marcosatanaka.pastweather.model.Constants;
 import org.geonames.Toponym;
 import org.geonames.ToponymSearchCriteria;
 import org.geonames.ToponymSearchResult;
