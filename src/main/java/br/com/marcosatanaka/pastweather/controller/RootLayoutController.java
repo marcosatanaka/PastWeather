@@ -1,14 +1,17 @@
 package br.com.marcosatanaka.pastweather.controller;
 
 import br.com.marcosatanaka.pastweather.model.GeographicCoordinateFinder;
-import br.com.marcosatanaka.pastweather.model.WeatherDataFinder;
 import br.com.marcosatanaka.pastweather.model.WeatherData;
+import br.com.marcosatanaka.pastweather.model.WeatherDataFinder;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
+
+import static br.com.marcosatanaka.pastweather.model.Translator.translatePercentageValue;
+import static br.com.marcosatanaka.pastweather.model.Translator.translateTemperature;
 
 /**
  * Controller to RootLayout.fxml.
@@ -74,15 +77,15 @@ public class RootLayoutController {
             WeatherData weatherData = WeatherDataFinder.getWeatherData(latitude, longitude, date.getValue().toString());
 
             if (weatherData != null) {
-                lblPrecipitationProbability.setText(weatherData.getFormattedPrecipProbability());
+                lblPrecipitationProbability.setText(translatePercentageValue(weatherData.getPrecipProbability()));
                 lblMainInformation.setText(weatherData.getSummary());
-                lblMaxTemp.setText(weatherData.getTemperatureMax().toString());
-                lblMinTemp.setText(weatherData.getTemperatureMin().toString());
+                lblMaxTemp.setText(translateTemperature(weatherData.getTemperatureMax()));
+                lblMinTemp.setText(translateTemperature(weatherData.getTemperatureMin()));
                 lblPrecipIntensity.setText(weatherData.getPrecipIntensity().toString());
-                lblHumidity.setText(weatherData.getFormattedHumidity());
+                lblHumidity.setText(translatePercentageValue(weatherData.getHumidity()));
                 lblPressure.setText(weatherData.getPressure().toString());
                 lblOzone.setText(weatherData.getOzone().toString());
-                lblCloudCover.setText(weatherData.getFormattedCloudCover());
+                lblCloudCover.setText(translatePercentageValue(weatherData.getCloudCover()));
                 lblDewPoint.setText(weatherData.getDewPoint().toString());
                 lblWindSpeed.setText(weatherData.getWindSpeed().toString());
                 lblWindBearing.setText(weatherData.getWindBearing().toString());

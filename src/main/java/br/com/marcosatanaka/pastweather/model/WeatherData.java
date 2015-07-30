@@ -154,10 +154,6 @@ public class WeatherData {
         return precipProbability;
     }
 
-    public String getFormattedPrecipProbability() {
-        return String.valueOf(getPrecipProbability() * 100) + " %";
-    }
-
     /**
      * @return A string representing the type of precipitation occurring at the given time.
      * See https://developer.forecast.io/docs/v2 for details.
@@ -276,19 +272,11 @@ public class WeatherData {
         return cloudCover;
     }
 
-    public String getFormattedCloudCover() {
-        return String.valueOf(getCloudCover() * 100) + " %";
-    }
-
     /**
      * @return A numerical value between 0 and 1 (inclusive) representing the relative humidity.
      */
     public Double getHumidity() {
         return humidity;
-    }
-
-    public String getFormattedHumidity() {
-        return String.valueOf(getHumidity() * 100) + " %";
     }
 
     /**
