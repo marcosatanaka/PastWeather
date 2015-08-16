@@ -10,8 +10,7 @@ import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
 
-import static br.com.marcosatanaka.pastweather.model.Translator.translatePercentageValue;
-import static br.com.marcosatanaka.pastweather.model.Translator.translateTemperature;
+import static br.com.marcosatanaka.pastweather.model.Translator.*;
 
 /**
  * Controller to RootLayout.fxml.
@@ -78,17 +77,17 @@ public class RootLayoutController {
 
             if (weatherData != null) {
                 lblPrecipitationProbability.setText(translatePercentageValue(weatherData.getPrecipProbability()));
-                lblMainInformation.setText(weatherData.getSummary());
+                lblMainInformation.setText(removeQuotationMarks(weatherData.getSummary()));
                 lblMaxTemp.setText(translateTemperature(weatherData.getTemperatureMax()));
                 lblMinTemp.setText(translateTemperature(weatherData.getTemperatureMin()));
-                lblPrecipIntensity.setText(weatherData.getPrecipIntensity().toString());
+                lblPrecipIntensity.setText(translatePrecipIntensity(weatherData.getPrecipIntensity()));
                 lblHumidity.setText(translatePercentageValue(weatherData.getHumidity()));
-                lblPressure.setText(weatherData.getPressure().toString());
-                lblOzone.setText(weatherData.getOzone().toString());
+                lblPressure.setText(translatePressure(weatherData.getPressure()));
+                lblOzone.setText(translateOzone(weatherData.getOzone()));
                 lblCloudCover.setText(translatePercentageValue(weatherData.getCloudCover()));
-                lblDewPoint.setText(weatherData.getDewPoint().toString());
-                lblWindSpeed.setText(weatherData.getWindSpeed().toString());
-                lblWindBearing.setText(weatherData.getWindBearing().toString());
+                lblDewPoint.setText(translateTemperature(weatherData.getDewPoint()));
+                lblWindSpeed.setText(translateSpeed(weatherData.getWindSpeed()));
+                lblWindBearing.setText(translateDirection(weatherData.getWindBearing()));
             }
         }
     }

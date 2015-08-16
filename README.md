@@ -1,6 +1,5 @@
 # PastWeather
 A JavaFX application that provides weather information about a location in the present, past or future. It uses the Forecast.io API through the library provided by [ForecastIO-Lib-Java](https://github.com/dvdme/forecastio-lib-java).
-Currently in development! :smiley:
  
 ## Getting started
 This project it's being developed on IntelliJ IDEA, with Java 8 and JavaFX.
@@ -12,10 +11,13 @@ For being able to use it, you will have to register at Forecast.io and GeoNames 
 - Consume data from Forecast.io API.
 - Create user interface using JavaFX.
 - Implement the user interface logic.
+- Enhance the user interface adding more weather information.
  
 ## To Do:
-- Enhance the user interface adding more weather information.
-- Implement autocomplete for city field.
+- Display unit symbols according to language.
+- Add icon on the app. :cloud:
+- Gif animation according to precipitation intensity. :smiley:
+- Autocomplete for city field.
  
 ## External Libraries:
 PastWeather uses [ForecastIO-Lib-Java](https://github.com/dvdme/forecastio-lib-java) to communicate with the Forecast.io API. This is a dependency on pom.xml.

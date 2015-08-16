@@ -10,7 +10,7 @@
    <top>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblPrecipitationProbability" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="Precipitation probability" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+            <Label fx:id="lblPrecipitationProbability" alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="Enter a city..." textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="26.0" />
                </font></Label>
@@ -18,27 +18,36 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="197.0" prefWidth="180.0">
                      <children>
-                        <Label fx:id="lblMainInformation" text="Label" textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="lblMainInformation" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                      </children>
                   </VBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label text="Maximum:">
+                        <Label text="Maximum:" textAlignment="CENTER">
                            <padding>
                               <Insets right="10.0" />
                            </padding>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
                         </Label>
-                        <Label fx:id="lblMaxTemp" text="Label" />
+                        <Label fx:id="lblMaxTemp" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="lblSecondaryInformation" text="Minimum:" textAlignment="RIGHT" wrapText="true">
+                        <Label fx:id="lblSecondaryInformation" text="Minimum:" textAlignment="CENTER" wrapText="true">
                            <padding>
                               <Insets right="10.0" />
                            </padding>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
                         </Label>
-                        <Label fx:id="lblMinTemp" text="Label" />
+                        <Label fx:id="lblMinTemp" />
                      </children>
                   </HBox>
                </children></VBox>
@@ -64,52 +73,76 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                      <children>
-                        <Label text="Precipitation intensity:" />
-                        <Label fx:id="lblPrecipIntensity" text="Label" />
+                        <Label text="Precipitation intensity:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblPrecipIntensity" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
                      <children>
-                        <Label text="Humidity:" />
-                        <Label fx:id="lblHumidity" text="Label" />
+                        <Label text="Humidity:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblHumidity" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Pressure" />
-                        <Label fx:id="lblPressure" text="Label" />
+                        <Label text="Atmospheric ozone:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblOzone" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label text="Atmospheric ozone:" />
-                        <Label fx:id="lblOzone" text="Label" />
+                        <Label text="Pressure:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblPressure" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Percentage of clouds:" />
-                        <Label fx:id="lblCloudCover" text="Label" />
+                        <Label text="Percentage of clouds:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblCloudCover" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Dew point:" />
-                        <Label fx:id="lblDewPoint" text="Label" />
+                        <Label text="Dew point:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>   
+                        <Label fx:id="lblDewPoint" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
                      <children>
-                        <Label text="Wind speed:" />
-                        <Label fx:id="lblWindSpeed" text="Label" />
+                        <Label text="Wind speed:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblWindSpeed" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Label text="Wind direction:" />
-                        <Label fx:id="lblWindBearing" text="Label" />
+                        <Label text="Wind direction:" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="lblWindBearing" />
                      </children>
                   </VBox>
                </children>
