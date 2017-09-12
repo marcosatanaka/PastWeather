@@ -1,5 +1,7 @@
 package br.com.marcosatanaka.pastweather.model;
 
+import com.google.common.base.MoreObjects;
+
 import static br.com.marcosatanaka.pastweather.model.Constants.LINE_BREAK;
 
 /**
@@ -303,75 +305,47 @@ public class WeatherData {
 
     @Override
     public String toString() {
-        return "WeatherData:" + LINE_BREAK +
-                "time = " + time + LINE_BREAK +
-                "summary = " + summary + LINE_BREAK +
-                "icon = " + icon + LINE_BREAK +
-                "sunriseTime = " + sunriseTime + LINE_BREAK +
-                "sunsetTime = " + sunsetTime + LINE_BREAK +
-                "moonPhase = " + moonPhase + LINE_BREAK +
-                "nearestStormDistance = " + nearestStormDistance + LINE_BREAK +
-                "nearestStormBearing = " + nearestStormBearing + LINE_BREAK +
-                "precipIntensity = " + precipIntensity + LINE_BREAK +
-                "precipIntensityMax = " + precipIntensityMax + LINE_BREAK +
-                "precipIntensityMaxTime = " + precipIntensityMaxTime + '\'' + LINE_BREAK +
-                "precipProbability = " + precipProbability + LINE_BREAK +
-                "precipType = " + precipType + LINE_BREAK +
-                "precipAccumulation = " + precipAccumulation + LINE_BREAK +
-                "temperature = " + temperature + LINE_BREAK +
-                "temperatureMin = " + temperatureMin + LINE_BREAK +
-                "temperatureMinTime = '" + temperatureMinTime + LINE_BREAK +
-                "temperatureMax = " + temperatureMax + LINE_BREAK +
-                "temperatureMaxTime = '" + temperatureMaxTime + LINE_BREAK +
-                "apparentTemperature = " + apparentTemperature + LINE_BREAK +
-                "apparentTemperatureMin = " + apparentTemperatureMin + LINE_BREAK +
-                "apparentTemperatureMinTime = " + apparentTemperatureMinTime + LINE_BREAK +
-                "apparentTemperatureMax = " + apparentTemperatureMax + LINE_BREAK +
-                "apparentTemperatureMaxTime = " + aparentTemperatureMaxTime + LINE_BREAK +
-                "dewPoint = " + dewPoint + LINE_BREAK +
-                "windSpeed = " + windSpeed + LINE_BREAK +
-                "windBearing = " + windBearing + LINE_BREAK +
-                "cloudCover = " + cloudCover + LINE_BREAK +
-                "humidity = " + humidity + LINE_BREAK +
-                "pressure = " + pressure + LINE_BREAK +
-                "visibility = " + visibility + LINE_BREAK +
-                "ozone = " + ozone +
-                '}';
+        return MoreObjects.toStringHelper(this)
+                .add("time = ", time)
+                .add("summary = ", summary)
+                .add("precipIntensity = ", precipIntensity)
+                .add("temperature = ", temperature)
+                .toString();
     }
 
     private WeatherData(Builder builder) {
-        time = builder.time;
-        summary = builder.summary;
-        icon = builder.icon;
-        sunriseTime = builder.sunriseTime;
-        sunsetTime = builder.sunsetTime;
-        moonPhase = builder.moonPhase;
-        nearestStormDistance = builder.nearestStormDistance;
-        nearestStormBearing = builder.nearestStormBearing;
-        precipIntensity = builder.precipIntensity;
-        precipIntensityMax = builder.precipIntensityMax;
-        precipIntensityMaxTime = builder.precipIntensityMaxTime;
-        precipProbability = builder.percipProbability;
-        precipType = builder.precipType;
-        precipAccumulation = builder.precipAccumulation;
-        temperature = builder.temperature;
-        temperatureMin = builder.temperatureMin;
-        temperatureMinTime = builder.temperatureMinTime;
-        temperatureMax = builder.temperatureMax;
-        temperatureMaxTime = builder.temperatureMaxTime;
-        apparentTemperature = builder.apparentTemperature;
-        apparentTemperatureMin = builder.apparentTemperatureMin;
-        apparentTemperatureMinTime = builder.apparentTemperatureMinTime;
-        apparentTemperatureMax = builder.apparentTemperatureMax;
-        aparentTemperatureMaxTime = builder.apparentTemperatureMaxTime;
-        dewPoint = builder.dewPoint;
-        windSpeed = builder.windSpeed;
-        windBearing = builder.windBearing;
-        cloudCover = builder.cloudCover;
-        humidity = builder.humidity;
-        pressure = builder.pressure;
-        visibility = builder.visibility;
-        ozone = builder.ozone;
+        this.time = builder.time;
+        this.summary = builder.summary;
+        this.icon = builder.icon;
+        this.sunriseTime = builder.sunriseTime;
+        this.sunsetTime = builder.sunsetTime;
+        this.moonPhase = builder.moonPhase;
+        this.nearestStormDistance = builder.nearestStormDistance;
+        this.nearestStormBearing = builder.nearestStormBearing;
+        this.precipIntensity = builder.precipIntensity;
+        this.precipIntensityMax = builder.precipIntensityMax;
+        this.precipIntensityMaxTime = builder.precipIntensityMaxTime;
+        this.precipProbability = builder.percipProbability;
+        this.precipType = builder.precipType;
+        this.precipAccumulation = builder.precipAccumulation;
+        this.temperature = builder.temperature;
+        this.temperatureMin = builder.temperatureMin;
+        this.temperatureMinTime = builder.temperatureMinTime;
+        this.temperatureMax = builder.temperatureMax;
+        this.temperatureMaxTime = builder.temperatureMaxTime;
+        this.apparentTemperature = builder.apparentTemperature;
+        this.apparentTemperatureMin = builder.apparentTemperatureMin;
+        this.apparentTemperatureMinTime = builder.apparentTemperatureMinTime;
+        this.apparentTemperatureMax = builder.apparentTemperatureMax;
+        this.aparentTemperatureMaxTime = builder.apparentTemperatureMaxTime;
+        this.dewPoint = builder.dewPoint;
+        this.windSpeed = builder.windSpeed;
+        this.windBearing = builder.windBearing;
+        this.cloudCover = builder.cloudCover;
+        this.humidity = builder.humidity;
+        this.pressure = builder.pressure;
+        this.visibility = builder.visibility;
+        this.ozone = builder.ozone;
     }
 
     public static Builder builder() {

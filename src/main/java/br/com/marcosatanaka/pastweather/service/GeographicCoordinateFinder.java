@@ -1,21 +1,22 @@
-package br.com.marcosatanaka.pastweather.model;
+package br.com.marcosatanaka.pastweather.service;
 
+import br.com.marcosatanaka.pastweather.model.Constants;
 import org.geonames.Toponym;
 import org.geonames.ToponymSearchCriteria;
 import org.geonames.ToponymSearchResult;
 import org.geonames.WebService;
 
-/**
- * Contains logic to get latitude and longitude of a city by name.
- */
 public class GeographicCoordinateFinder {
 
-    public static String getLatitudeForLocation(String city) throws Exception {
+    private GeographicCoordinateFinder() {
+    }
+
+    public static String getLatitude(String city) throws Exception {
         Toponym toponym = getToponym(city);
         return String.valueOf(toponym.getLatitude());
     }
 
-    public static String getLongitudeForLocation(String city) throws Exception {
+    public static String getLongitude(String city) throws Exception {
         Toponym toponym = getToponym(city);
         return String.valueOf(toponym.getLongitude());
     }
@@ -26,8 +27,8 @@ public class GeographicCoordinateFinder {
         ToponymSearchCriteria searchCriteria = new ToponymSearchCriteria();
         searchCriteria.setQ(city);
 
-        ToponymSearchResult searchResult = WebService.search(searchCriteria);
-        return searchResult.getToponyms()
+        ToponymSearchResult toponymSearchResult = WebService.search(searchCriteria);
+        return toponymSearchResult.getToponyms()
                 .stream()
                 .findFirst()
                 .orElseThrow(() -> new Exception("City not found!"));

@@ -1,9 +1,9 @@
 package br.com.marcosatanaka.pastweather.model;
 
-/**
- * Constants used throughout the app.
- */
 public class Constants {
+
+    private Constants() {
+    }
 
     public static final String FORECAST_IO_API_KEY = "PUT_YOUR_API_KEY_HERE";
     public static final String GEONAMES_APP_NAME = "PUT_YOUR_APP_NAME_HERE";

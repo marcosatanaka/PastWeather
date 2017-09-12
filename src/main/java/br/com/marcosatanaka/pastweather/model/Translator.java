@@ -5,32 +5,35 @@ package br.com.marcosatanaka.pastweather.model;
  */
 public class Translator {
 
+    private Translator() {
+    }
+
     public static String translatePercentageValue(Double value) {
-        return String.valueOf(value * 100) + " %";
+        return String.format("%s%%", value * 100);
     }
 
     public static String translateTemperature(Double value) {
-        return String.valueOf(value) + " " + (char)186 + "C";
+        return String.format("%s %sC", value, (char)186);
     }
 
     public static String translatePressure(Double value) {
-        return String.valueOf(value) + " mbar";
+        return String.format("%s mbar", value);
     }
 
     public static String translateOzone(Double value) {
-        return String.valueOf(value) + " DU";
+        return String.format("%s DU", value);
     }
 
     public static String translatePrecipIntensity(Double value) {
-        return String.valueOf(value) + " in/hr";
+        return String.format("%s in/hr", value);
     }
 
     public static String translateSpeed(Double value) {
-        return String.valueOf(value) + " km/h";
+        return String.format("%s km/h", value);
     }
 
     public static String translateDirection(Double value) {
-        return String.valueOf(value) + " " + (char)186;
+        return String.format("%s %s", value, (char)186);
     }
 
     public static String removeQuotationMarks(String string) {
