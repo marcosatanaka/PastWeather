@@ -14,6 +14,7 @@ For being able to use it, you will have to register at Forecast.io and GeoNames 
 - Enhance the user interface adding more weather information.
  
 ## To Do:
+- Unit test the app.
 - Display unit symbols according to language.
 - Add icon on the app. :cloud:
 - Gif animation according to precipitation intensity. :smiley:
